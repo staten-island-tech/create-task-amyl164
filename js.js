@@ -5,7 +5,7 @@ const DOMSelectors = {
     container: document.querySelector(".container"),
     button: document.querySelector(".display"),
 }
-function bye(){
+function Bye(){
     DOMSelectors.name.value= "";
     DOMSelectors.bday.value= "";
 }
@@ -20,9 +20,9 @@ DOMSelectors.form.addEventListener("submit", function(event){
 
     data.push(data2)
     console.log(data)
-    bye()
+    Bye()
 })
-function clearfields(){
+function ClearFields(){
     DOMSelectors.container.innerHTML = "";
 }
 
@@ -37,7 +37,7 @@ function SortByMonth(arr){
                 arr[j] = temp;
         }}}}
 
-function insertcards(arr){
+function InsertCards(arr){
     SortByMonth(arr)
     arr.forEach((data) => {
         DOMSelectors.container.insertAdjacentHTML(
@@ -50,5 +50,5 @@ function insertcards(arr){
 
 DOMSelectors.button.addEventListener("click", function(event){
     event.preventDefault();
-    clearfields()
-    insertcards(data)})
+    ClearFields()
+    InsertCards(data)})
